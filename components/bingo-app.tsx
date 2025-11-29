@@ -36,8 +36,8 @@ const TEXT_PROMPTS = [
 
 const PICTURE_CATEGORIES = [
   "Fav Moments of the Year",
-  "Mirror Selfie",
-  "Bareng Teman Terdekat",
+  "Fav Selca",
+  "Bareng circle",
   "Peliharaanmu",
   "Makanan Terenak",
   "Sunset/Sunrise",
