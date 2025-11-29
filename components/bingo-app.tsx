@@ -150,13 +150,7 @@ function BingoApp() {
       whatsapp: `https://wa.me/?text=${encodeURIComponent(fullText)}`,
     }
 
-    if (shareUrls[platform]) {
-      if (platform === "instagram") {
-        alert("Open Instagram and share a screenshot of your bingo card!")
-      } else {
-        window.open(shareUrls[platform], "_blank", "width=600,height=400")
-      }
-    }
+    window.open(shareUrls[platform], "_blank", "width=600,height=600")
   }
 
   function shareBoard() {
@@ -220,7 +214,7 @@ function BingoApp() {
             fontFamily: "var(--font-poppins), sans-serif",
           }}
         >
-          made with ♡ for your 2025 vibes
+          made with ♡
         </p>
       </div>
     </div>
