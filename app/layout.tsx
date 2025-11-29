@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "A Year in a Box",
     description: "Your chaotic, fun, and relatable year in one bingo board. Create your own 2025 wrapped bingo card!",
-    url: "https://ayearinabox.com", // Assuming a URL, can be updated later if known
+    url: "https://ayearinabox.vercel.app/", // Assuming a URL, can be updated later if known
     siteName: "A Year in a Box",
     locale: "en_US",
     type: "website",

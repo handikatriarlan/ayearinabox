@@ -53,7 +53,7 @@ export default function BingoGrid({
 
     ctx.fillStyle = "#8B7B7B"
     ctx.font = "14px sans-serif"
-    ctx.fillText("ayearinabox.com", baseSize / 2, 68)
+    ctx.fillText("ayearinabox.vercel.app", baseSize / 2, 68)
 
     const cellSize = baseSize / 5
     const offsetY = 80
