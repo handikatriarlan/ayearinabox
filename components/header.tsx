@@ -15,7 +15,7 @@ export default function Header() {
           letterSpacing: "-0.5px",
         }}
       >
-        2025 Wrapped Bingo
+        A Year in a Box
       </h1>
 
       <p

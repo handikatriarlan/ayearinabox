@@ -134,12 +134,12 @@ function BingoApp() {
 
     const link = document.createElement("a")
     link.href = canvas.toDataURL("image/png")
-    link.download = `2025-wrapped-${mode}-bingo.png`
+    link.download = `a-year-in-a-box-${mode}-bingo.png`
     link.click()
   }
 
   function shareSocial(platform: string) {
-    const text = "I completed the 2025 Wrapped Bingo Card! How many did you get?"
+    const text = "I completed the A Year in a Box Bingo Card! How many did you get?"
     const url = window.location.href
     const fullText = `${text} ${url}`
 
@@ -154,12 +154,12 @@ function BingoApp() {
   }
 
   function shareBoard() {
-    const text = `I completed the 2025 Wrapped Bingo Card! How many did you get? `
+    const text = `I completed the A Year in a Box Bingo Card! How many did you get? `
     const url = window.location.href
 
     if (navigator.share) {
       navigator.share({
-        title: "2025 Wrapped Bingo",
+        title: "A Year in a Box",
         text: text,
         url: url,
       })
