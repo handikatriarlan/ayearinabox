@@ -22,7 +22,6 @@ export default function ControlPanel({ onReset, onDownload, onShare, onShareSoci
             fontFamily: "var(--font-poppins), sans-serif",
           }}
         >
-          <span style={{ fontSize: "12px" }}>📥</span>
           Download
         </button>
         <button
@@ -36,7 +35,6 @@ export default function ControlPanel({ onReset, onDownload, onShare, onShareSoci
             fontFamily: "var(--font-poppins), sans-serif",
           }}
         >
-          <span style={{ fontSize: "12px" }}>🔄</span>
           Reset
         </button>
       </div>

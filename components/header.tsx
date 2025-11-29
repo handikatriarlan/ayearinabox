@@ -3,12 +3,6 @@
 export default function Header() {
   return (
     <div className="text-center pt-2">
-      <div className="flex justify-center items-center gap-1 mb-2">
-        <span style={{ fontSize: "20px" }}>✨</span>
-        <span style={{ fontSize: "28px" }}>📦</span>
-        <span style={{ fontSize: "20px" }}>✨</span>
-      </div>
-
       <h1
         className="font-bold mb-1"
         style={{

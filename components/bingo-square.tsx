@@ -73,17 +73,6 @@ export default function BingoSquare({
             </svg>
           </div>
         )}
-
-        {isSelected && (
-          <>
-            <div className="absolute top-1 left-1 text-xs opacity-60" style={{ fontSize: "8px" }}>
-              ✨
-            </div>
-            <div className="absolute bottom-1 right-1 text-xs opacity-40" style={{ fontSize: "6px" }}>
-              ♡
-            </div>
-          </>
-        )}
       </button>
     )
   }
