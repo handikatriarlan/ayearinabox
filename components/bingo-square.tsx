@@ -96,7 +96,7 @@ export default function BingoSquare({
             className="absolute inset-0"
             style={{
               backgroundImage: `url(${image})`,
-              backgroundSize: "cover",
+              backgroundSize: "contain",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}

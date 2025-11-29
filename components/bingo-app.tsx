@@ -66,32 +66,11 @@ function BingoApp() {
   const [mode, setMode] = useState("text")
   const [selectedSquares, setSelectedSquares] = useState<Set<number>>(new Set())
   const [imageData, setImageData] = useState<Record<string, string>>({})
-  const [isLoaded, setIsLoaded] = useState(false)
 
-  useEffect(() => {
-    const saved = localStorage.getItem("bingoState")
-    if (saved) {
-      try {
-        const state = JSON.parse(saved)
-        setMode(state.mode || "text")
-        setSelectedSquares(new Set(state.selectedSquares || []))
-        setImageData(state.imageData || {})
-      } catch {
-        // Failed to load
-      }
-    }
-    setIsLoaded(true)
-  }, [])
 
-  useEffect(() => {
-    if (!isLoaded) return
-    const state = {
-      mode,
-      selectedSquares: Array.from(selectedSquares),
-      imageData,
-    }
-    localStorage.setItem("bingoState", JSON.stringify(state))
-  }, [mode, selectedSquares, imageData, isLoaded])
+
+
+
 
   function toggleSquare(index: number) {
     const newSet = new Set(selectedSquares)
@@ -170,7 +149,7 @@ function BingoApp() {
     }
   }
 
-  if (!isLoaded) return <div className="min-h-screen" />
+
 
   const prompts = mode === "text" ? TEXT_PROMPTS : PICTURE_CATEGORIES
 

@@ -33,25 +33,29 @@ export default function BingoGrid({
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    const size = 800
-    canvas.width = size
-    canvas.height = size + 80 // Extra space for title
+    const baseSize = 800
+    const scale = 2.5
+    canvas.width = baseSize * scale
+    canvas.height = (baseSize + 80) * scale
+
+    // Scale context for high resolution
+    ctx.scale(scale, scale)
 
     // Background
     ctx.fillStyle = "#FFF9F5"
-    ctx.fillRect(0, 0, size, size + 80)
+    ctx.fillRect(0, 0, baseSize, baseSize + 80)
 
     // Title
     ctx.fillStyle = "#D4618C"
     ctx.font = "bold 28px sans-serif"
     ctx.textAlign = "center"
-    ctx.fillText("2025 Wrapped Bingo", size / 2, 45)
+    ctx.fillText("A Year in a Box", baseSize / 2, 45)
 
     ctx.fillStyle = "#8B7B7B"
     ctx.font = "14px sans-serif"
-    ctx.fillText("yearinbox.app", size / 2, 68)
+    ctx.fillText("ayearinabox.com", baseSize / 2, 68)
 
-    const cellSize = size / 5
+    const cellSize = baseSize / 5
     const offsetY = 80
 
     if (mode === "text") {
@@ -156,44 +160,27 @@ export default function BingoGrid({
               ctx.roundRect(x + 6, y + 6, cellSize - 12, cellSize - 12, 10)
               ctx.clip()
 
-              // Cover fit
+              // Contain fit (don't limit size/crop)
               const imgRatio = img.width / img.height
               const cellRatio = 1
               let drawWidth, drawHeight, drawX, drawY
 
               if (imgRatio > cellRatio) {
-                drawHeight = cellSize - 12
-                drawWidth = drawHeight * imgRatio
-                drawX = x + 6 - (drawWidth - (cellSize - 12)) / 2
-                drawY = y + 6
-              } else {
+                // Image is wider
                 drawWidth = cellSize - 12
                 drawHeight = drawWidth / imgRatio
                 drawX = x + 6
-                drawY = y + 6 - (drawHeight - (cellSize - 12)) / 2
+                drawY = y + 6 + ((cellSize - 12) - drawHeight) / 2
+              } else {
+                // Image is taller
+                drawHeight = cellSize - 12
+                drawWidth = drawHeight * imgRatio
+                drawX = x + 6 + ((cellSize - 12) - drawWidth) / 2
+                drawY = y + 6
               }
 
               ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight)
               ctx.restore()
-
-              // Checkmark
-              const gradient = ctx.createLinearGradient(x + cellSize - 32, y + 12, x + cellSize - 12, y + 32)
-              gradient.addColorStop(0, "#7ED56F")
-              gradient.addColorStop(1, "#B5E7A0")
-              ctx.fillStyle = gradient
-              ctx.beginPath()
-              ctx.arc(x + cellSize - 20, y + 22, 12, 0, Math.PI * 2)
-              ctx.fill()
-
-              ctx.strokeStyle = "white"
-              ctx.lineWidth = 2.5
-              ctx.lineCap = "round"
-              ctx.lineJoin = "round"
-              ctx.beginPath()
-              ctx.moveTo(x + cellSize - 26, y + 22)
-              ctx.lineTo(x + cellSize - 21, y + 27)
-              ctx.lineTo(x + cellSize - 14, y + 17)
-              ctx.stroke()
 
               resolve()
             }
