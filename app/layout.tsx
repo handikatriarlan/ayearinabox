@@ -73,6 +73,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${fredoka.variable} ${poppins.variable}`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="Ws8LmDmWyIRHQOlmU_sd1F_OcBt4tKKZlkFwg2AS1wE" />
+      </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
         {children}
         <Analytics />
