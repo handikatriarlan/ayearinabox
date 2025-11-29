@@ -101,7 +101,7 @@ export default function BingoSquare({
               backgroundRepeat: "no-repeat",
             }}
           />
-          <div
+          {/* <div
             className="absolute top-1 right-1 w-4 h-4 rounded-full flex items-center justify-center"
             style={{
               background: "linear-gradient(135deg, #7ED56F 0%, #B5E7A0 100%)",
@@ -111,7 +111,7 @@ export default function BingoSquare({
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
               <path d="M5 13l4 4L19 7" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </div>
+          </div> */}
           {/* Hover overlay to change photo */}
           <div
             className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center"
